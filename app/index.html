@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" dir="ltr" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+        }
+        
+        body.vscode-dark svg line,
+        svg path {
+            stroke: #ababab;
+        }
+        
+        body.vscode-dark svg .signal line,
+        body.vscode-dark svg .signal path,
+        body.vscode-dark svg .title rect,
+        body.vscode-dark svg .title path,
+        body.vscode-dark svg .actor rect,
+        body.vscode-dark svg .actor path,
+        body.vscode-dark svg .note rect,
+        body.vscode-dark svg .note path {
+            fill: none;
+            stroke: #ababab;
+        }
+        
+        body.vscode-dark svg .title text,
+        body.vscode-dark svg .signal text,
+        body.vscode-dark svg .note text,
+        body.vscode-dark svg .actor text {
+            fill: #dedede;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+        
+        .item-left {
+            width: 38.2%;
+            height: 100%;
+            order: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: #333;
+        }
+        
+        .item-left .text {
+            color: gray;
+            margin-left: 5%;
+            font-size: 2vh;
+            resize: both;
+        }
+        
+        .input-text {
+            width: 90%;
+            height: 75%;
+            font-family: "Andale Mono", monospace;
+            font-size: 14px;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 5%;
+            resize: none;
+            box-shadow: 1px 1px inset;
+        }
+        
+        .btn-save {
+            font-family: "Andale Mono", monospace;
+            margin-left: 5%;
+            margin-top: 30px;
+            width: 30%;
+            height: 5%;
+            box-shadow: 1% 1%;
+        }
+        
+        .item-right {
+            order: 1;
+        }
+    </style>
+    <script>
+        window.nodeRequire = window.require;
+        delete window.require;
+        delete window.exports;
+        delete window.module;
+    </script>
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./vendor/css/sequence-diagram.css">
+</head>
+
+<body ng-controller="myController" class="container">
+    <!-- Layout     -->
+
+    <div class="item-left">
+        <textarea id="input1" ng-change="update()" ng-model="textVal" class="input-text" cols="10" rows="5"></textarea>
+        <button class="btn-save" ng-click="saveDraw()">
+                <i class="fa fa-download " style="line-height: 100%;font-size:5vmin;"></i>
+        </button>
+        <div class="text">
+            <p ng-bind="imgLocation"></p>
+        </div>
+    </div>
+    <div class="item-right">
+        <div id="diagram"></div>
+        <canvas ng-hide=true id="canvas" width="1" height="1"></canvas>
+    </div>
+
+    <!--    Lib Code    -->
+    <script src="../node_modules/snapsvg/dist/snap.svg-min.js"></script>
+    <script src="../node_modules/canvg/canvg.js"></script>
+    <script src="../node_modules/angular/angular.min.js"></script>
+
+    <script src="./vendor/underscore-min.js"></script>
+    <script src="./vendor/webfont.js"></script>
+    <script src="./vendor/sequence-diagram-snap.js"></script>
+
+    <!--    App Code    -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>

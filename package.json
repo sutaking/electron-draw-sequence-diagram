@@ -1,0 +1,33 @@
+{
+    "name": "electron-draw-sequence-diagram",
+    "version": "0.0.1",
+    "description": "Draw UML sequence diagrams on desktop by Electron",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sutaking/electron-draw-sequence-diagram.git"
+    },
+    "keywords": [
+        "electron"
+    ],
+    "author": {
+        "name": "sutaking",
+        "email": "zhaofeng.vip@gmail.com",
+        "url": "https://github.com/sutaking"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/sutaking/electron-draw-sequence-diagram/issues"
+    },
+    "homepage": "https://github.com/sutaking/electron-draw-sequence-diagram#readme",
+    "devDependencies": {
+        "electron": "^1.8.4",
+        "electron-builder": "^20.5.1"
+    },
+    "dependencies": {
+        "downloads-folder": "^1.0.1"
+    }
+}
