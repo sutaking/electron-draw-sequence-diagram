@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+body.vscode-dark svg line,
+svg path {
+    stroke: #ababab;
+}
+
+body.vscode-dark svg .signal line,
+body.vscode-dark svg .signal path,
+body.vscode-dark svg .title rect,
+body.vscode-dark svg .title path,
+body.vscode-dark svg .actor rect,
+body.vscode-dark svg .actor path,
+body.vscode-dark svg .note rect,
+body.vscode-dark svg .note path {
+    fill: none;
+    stroke: #ababab;
+}
+
+body.vscode-dark svg .title text,
+body.vscode-dark svg .signal text,
+body.vscode-dark svg .note text,
+body.vscode-dark svg .actor text {
+    fill: #dedede;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.item-left {
+    width: 38.2%;
+    height: 100%;
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+}
+
+.item-left .text {
+    color: gray;
+    margin-left: 5%;
+    font-size: 2vh;
+    resize: both;
+}
+
+.input-text {
+    width: 90%;
+    height: 75%;
+    font-family: "Andale Mono", monospace;
+    font-size: 14px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    resize: none;
+    box-shadow: 1px 1px inset;
+}
+
+.btn-save {
+    font-family: "Andale Mono", monospace;
+    margin-left: 5%;
+    margin-top: 30px;
+    width: 30%;
+    height: 5%;
+    box-shadow: 1% 1%;
+}
+
+.item-right {
+    order: 1;
+}
