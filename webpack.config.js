@@ -2,12 +2,40 @@ const path = require('path');
 const webpack = require('webpack');
 const plugins = require('./webpack.plugin');
 const nodeExternals = require('webpack-node-externals');
+const merge = require('webpack-merge');
 
 const PATHS = {
     prod: path.resolve(__dirname, 'app'),
 }
 
 // PRODUCTION CONFIGS
+const productionConfig = merge([
+    // Clean build folder between builds
+    plugins.clean(PATHS.prod),
+    // Minify Javascript
+    plugins.minifyJavaScript(),
+    // Output
+    {
+        output: {
+            path: PATHS.prod,
+            filename: '[name].prod.js',
+        },
+        plugins: [
+            // Ignore stuff
+            new webpack.IgnorePlugin(/vertx/),
+        ],
+        // Exclude NodeModules
+        externals: [
+            nodeExternals({
+                whitelist: [
+                    'react-hot-loader',
+                    'react-hot-loader/patch',
+                    'redux-logger',
+                ],
+            }),
+        ],
+    },
+]);
 
 // DEV CONFIGS
 const developmentConfig = merge([
@@ -52,9 +80,9 @@ const commonConfig = merge([
         emitError: true,
     }),
     // Separate source map from bundles
-    parts.generateSourceMaps({ type: 'none' }),
+    plugins.generateSourceMaps({ type: 'none' }),
     // Extract Bundle & Code Spliting
-    parts.extractBundles([{
+    plugins.extractBundles([{
         name: 'vendor',
         minChunks: ({ resource }) =>
             resource &&
@@ -72,9 +100,7 @@ const commonConfig = merge([
             maxAssetSize: 450000, // in bytes
         },
 
-        entry: {
-            main: ['./app/index.jsx'],
-        },
+        entry: './app/index.jsx',
 
         context: path.resolve(__dirname),
 

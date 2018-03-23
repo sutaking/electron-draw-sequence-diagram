@@ -8,7 +8,7 @@ const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack
 exports.devServer = ({ host, port } = {}) => ({
     devServer: {
         hot: true,
-        inline: ture,
+        inline: true,
         progress: true,
         host,
         port,
@@ -32,12 +32,12 @@ exports.clean = path => ({
 });
 
 // JS Minification
-exports.minifyJavaScripts = () => ({
+exports.minifyJavaScript = () => ({
     plugins: [new BabelWebpackPlugin()],
 });
 
 // Analyzing Bundle
-exports.analyzebundle = () => ({
+exports.analyzeBundle = () => ({
     plugins: [new BundleAnalyzerPlugin()],
 });
 
