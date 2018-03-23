@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
+import TextArea from './components/TextArea';
+import Button from './components/Button';
+import SvgArea from './components/SvgArea';
+
 class App extends PureComponent {
     constructor(props) {
         super(props);
@@ -12,7 +16,15 @@ class App extends PureComponent {
 
     render() {
         return (
-            <div>asd</div>
+            <div className="container">
+                <div className="item-left">
+                    <TextArea />
+                    <Button />
+                </div>
+                <div className="item-right">
+                    <SvgArea />
+                </div>
+            </div>
         )
     }
 }
