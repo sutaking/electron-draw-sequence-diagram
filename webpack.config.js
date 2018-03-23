@@ -100,7 +100,12 @@ const commonConfig = merge([
             maxAssetSize: 450000, // in bytes
         },
 
-        entry: './app/index.jsx',
+        entry: {
+            app: [
+                'react-hot-loader/patch',
+                './app/index.jsx'
+            ],
+        },
 
         context: path.resolve(__dirname),
 
@@ -122,3 +127,11 @@ const commonConfig = merge([
         },
     },
 ]);
+
+//Exprot
+module.exports = env => {
+    if (env && env.production) {
+        return merge(productionConfig, commonConfig);
+    }
+    return merge(developmentConfig, commonConfig);
+}

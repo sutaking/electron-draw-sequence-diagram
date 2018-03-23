@@ -17,7 +17,7 @@
 <body>
     <!-- Layout     -->
     <div id="root" class="container">
-        <div class="item-left">
+        <!--div class="item-left">
             <textarea id="input1" ng-change="update()" ng-model="textVal" class="input-text" cols="10" rows="5"></textarea>
             <button class="btn-save" ng-click="saveDraw()">
                     <i class="fa fa-download " style="line-height: 100%;font-size:5vmin;"></i>
@@ -29,7 +29,7 @@
         <div class="item-right">
             <div id="diagram"></div>
             <canvas ng-hide=true id="canvas" width="1" height="1"></canvas>
-        </div>
+        </div-->
     </div>
 
 
@@ -59,8 +59,8 @@
                 )
             }
             document.write(
-                lists.map(src = > '<script defer src=" ' + src + '"><\/script>')
-                .jion('')
+                lists.map(src => '<script defer src=" ' + src + '"><\/script>')
+                .join('')
             )
         }
     </script>

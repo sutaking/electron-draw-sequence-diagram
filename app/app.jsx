@@ -12,7 +12,9 @@ class App extends PureComponent {
 
     render() {
         return (
-            <div></div>
+            <div>asd</div>
         )
     }
 }
+
+export default App;
