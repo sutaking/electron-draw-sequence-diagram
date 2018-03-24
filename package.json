@@ -54,6 +54,7 @@
         "webpack-node-externals": "^1.6.0"
     },
     "dependencies": {
+        "canvg": "^1.0.0",
         "clean-webpack-plugin": "^0.1.19",
         "compression-webpack-plugin": "^1.1.11",
         "downloads-folder": "^1.0.1",

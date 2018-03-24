@@ -23,6 +23,7 @@ class App extends PureComponent {
                 </div>
                 <div className="item-right">
                     <SvgArea />
+                    <canvas id="canvas"></canvas> 
                 </div>
             </div>
         )

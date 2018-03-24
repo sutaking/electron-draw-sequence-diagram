@@ -22,6 +22,8 @@ class SvgArea extends PureComponent {
         super(props);
     }
 
+
+
     render() {
         return(
             <SequenceDiagram input={input} options={options} onError={onError} />
