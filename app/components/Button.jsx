@@ -6,16 +6,12 @@ import canvg from 'canvg';
 class Button extends PureComponent {
     constructor(props) {
         super(props);
-    }
- 
-    downloadImage() {
-        let svgText = document.getElementsByTagName('svg')[0].outerHTML;
-        canvg('canvas', svgText);
+        //console.log(this.props.alt);
     }
 
     render() {
         return (
-            <button className="btn-save" onClick={this.downloadImage}>
+            <button className="btn-save" onClick={this.props.alt}>
                     <i className="fa fa-download" style={{lineHeight:'100%',fontSize:'5vmin'}}></i>
             </button>
         )
