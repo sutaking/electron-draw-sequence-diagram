@@ -7,6 +7,10 @@ import Button from './components/Button';
 import SvgArea from './components/SvgArea';
 
 import canvg from './vendor/canvg';
+import downloadsFolder from 'downloads-folder';
+import canvasBuffer from 'electron-canvas-to-buffer';
+import path from 'path';
+import fs from 'fs';
 
 class App extends PureComponent {
     constructor(props) {
@@ -26,6 +30,16 @@ class App extends PureComponent {
         let svgText = ReactDOM.findDOMNode(this.svgDom).childNodes[0].outerHTML;
         //let svgText = document.getElementsByTagName('svg')[0].outerHTML;
         canvg('canvas', svgText);
+        let buffer = canvasBuffer(canvas, 'image/png');
+        let imageName = path.join(downloadsFolder(), '/image.png');
+        
+        fs.writeFile(imageName, buffer, function() {
+            console.log(imageName);
+            /*$timeout(() => {
+                //$scope.imgLocation = `${$filter('date')(new Date(),'yyyy-MM-dd HH:mm:ss')}:\n${imageName}`;
+            }, 0);*/
+
+        });
     }
 
     render() {
@@ -38,11 +52,11 @@ class App extends PureComponent {
                 </div>
                 <div className="item-right">
                     <SvgArea ref={(textInput) => {this.svgDom = textInput;}}/>
-                    <canvas id="canvas" />
+                    <canvas id="canvas" style={{visibility: 'hidden'}}/>
                 </div>
             </div>
         )
     }
 }
-//style={{visibility: 'hidden'}}
+
 export default App;
