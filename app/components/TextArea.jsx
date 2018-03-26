@@ -8,7 +8,10 @@ class TextArea extends PureComponent {
 
     render() {
         return(
-            <textarea id="input1" className="input-text" cols="10" rows="5" />
+            <textarea 
+            id="input1" className="input-text" cols="10" rows="5" 
+            onChange={this.props.onChange}
+            value={this.props.value}/>
         )
     }
 }
