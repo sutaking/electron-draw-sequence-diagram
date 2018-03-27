@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 
 import SequenceDiagram from 'react-sequence-diagram';
 
-class SvgArea extends PureComponent {
+class SvgArea extends React.Component {
     constructor(props) {
         super(props);
         this.onError = this.onError.bind(this);
@@ -11,6 +10,12 @@ class SvgArea extends PureComponent {
 
     onError (err) {
         console.log(err);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log(nextProps);
+
+        return true;//this.timer();
     }
 
     render() {

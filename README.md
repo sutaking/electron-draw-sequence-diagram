@@ -5,8 +5,12 @@ Draw UML sequence diagrams on Desktop by Electron
 
 Toto-List
 
--   save svg to png
--   get input text
+-   ~~save svg to png~~
+-   ~~get input text~~
 -   build app to dmg & exe
--   layout ui
--   download png file from electron
+-   layout ui with absolute
+-   ~~download png file from electron~~
+-   js-sequence help doc
+-   add tool bar
+-   add status bar
+-   update ui style

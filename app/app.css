@@ -38,18 +38,18 @@ body.vscode-dark svg .actor text {
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
+    /*display: flex;
+    flex-direction: row;*/
     width: 100%;
     height: 100%;
 }
 
-.item-left {
+.item-text {
     width: 38.2%;
-    height: 100%;
+    height: 95%;
     order: 0;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
     background-color: #333;
 }
 
@@ -81,6 +81,8 @@ body.vscode-dark svg .actor text {
     box-shadow: 1% 1%;
 }
 
-.item-right {
-    order: 1;
+.item-svg {
+    position: absolute;
+    top: 0px;
+    left: 250px;
 }

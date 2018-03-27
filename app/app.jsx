@@ -6,18 +6,22 @@ import TextArea from './components/TextArea';
 import Button from './components/Button';
 import SvgArea from './components/SvgArea';
 
+import electron from 'electron';
+const screen = electron.screen;
+
 import canvg from './vendor/canvg';
 import downloadsFolder from 'downloads-folder';
 import canvasBuffer from 'electron-canvas-to-buffer';
 import path from 'path';
 import fs from 'fs';
 
-const input =
-  'Andrew->China: Says Hello\n' +
-  'Note right of China: China thinks\\nabout it\n' +
-  'China-->Andrew: How are you?\n' +
-  'Andrew->>China: I am good thanks!';
- 
+const infoBar ={
+    postition:'absolute',
+    bottom: '22px',
+    height : '22px',
+    width: '100%',
+    backgroundColor:'blue',
+};
 
 class App extends PureComponent {
     constructor(props) {
@@ -26,15 +30,15 @@ class App extends PureComponent {
         this.options = {
             theme: 'simple'
         };
-        //this.inputTxt = 'a->b:c';
+        let displays = electron.screen.getPrimaryDisplay();
+        console.log(displays)
         this.svgDom = '';
         this.downloadImage = this.downloadImage.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
         this.state = {
             inputTxt: 'a->b:c'
-        }
-        this.test = '';
+        };
     }
 
     componentDidMount() {
@@ -72,19 +76,23 @@ class App extends PureComponent {
 
         return (
             <div className="container">
-                <div className="item-left">
+                <div className="item-text">
                     <TextArea 
                         value = {this.state.inputTxt}
                         onChange={this.handleChange}/>
-                    <Button alt={this.downloadImage} />
+                    <Button 
+                        alt={this.downloadImage} />
                 </div>
-                <div className="item-right">
+                <div className="item-svg">
                     <SvgArea 
                         ref={(data) => {this.svgDom = data;}}
                         text={this.state.inputTxt}
                         opts={this.options}/>
-                    <canvas id="canvas" style={{visibility: 'hidden'}}/>
+                    <canvas 
+                        id="canvas" 
+                        style={{visibility: 'hidden'}}/>
                 </div>
+                <div style={infoBar}/>
             </div>
         )
     }

@@ -1,7 +1,11 @@
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import canvg from 'canvg';
+
+const btnStyles = {
+    lineHeight:'100%',
+    fontSize:'5vmin'
+}
 
 class Button extends PureComponent {
     constructor(props) {
@@ -12,7 +16,7 @@ class Button extends PureComponent {
     render() {
         return (
             <button className="btn-save" onClick={this.props.alt}>
-                    <i className="fa fa-download" style={{lineHeight:'100%',fontSize:'5vmin'}}></i>
+                    <i className="fa fa-download" style={btnStyles}></i>
             </button>
         )
     }
