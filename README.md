@@ -14,3 +14,5 @@ Toto-List
 -   add tool bar
 -   add status bar
 -   update ui style
+-   fix scrollbar show
+-   update style to head of app

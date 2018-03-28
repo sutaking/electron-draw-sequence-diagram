@@ -44,12 +44,19 @@ body.vscode-dark svg .actor text {
     height: 100%;
 }
 
+.tool-bar {
+    background-color: gray;
+    position: absolute;
+    left: 0px;
+    width: 54px;
+    height: 500px;
+}
+
 .item-text {
-    width: 38.2%;
-    height: 95%;
-    order: 0;
     /*display: flex;
     flex-direction: column;*/
+    position: absolute;
+    left: 54px;
     background-color: #333;
 }
 
@@ -84,5 +91,5 @@ body.vscode-dark svg .actor text {
 .item-svg {
     position: absolute;
     top: 0px;
-    left: 250px;
+    overflow: auto;
 }
