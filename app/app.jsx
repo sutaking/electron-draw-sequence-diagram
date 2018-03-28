@@ -15,7 +15,6 @@ import fs from 'fs';
 const infoBar ={
     position:'absolute',
     bottom: '0px',
-    //top: `${window.innerHeight-22}px`,
     height : '22px',
     width: '100%',
     lineHeight:'22px',
@@ -64,7 +63,6 @@ class App extends PureComponent {
 
     downloadImage() {
         console.log('-- downloadImage --');
-        //console.log(ReactDOM.findDOMNode(this.svgDom));
         
         let svgText = ReactDOM.findDOMNode(this.svgDom).childNodes[0].outerHTML;
         canvg('canvas', svgText);
@@ -76,12 +74,9 @@ class App extends PureComponent {
 
             this.setState({
                 infoText: `Download file: ${imageName} successful.`
-            });
-            
+            });            
         });
-        /*this.setState({
-            infoText: `Download file: ${imageName} successful.`
-        });*/
+
     }
 
     handleChange(evt) {
