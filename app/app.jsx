@@ -18,6 +18,10 @@ const infoBar ={
     //top: `${window.innerHeight-22}px`,
     height : '22px',
     width: '100%',
+    lineHeight:'22px',
+    fontSize: '13px',
+    fontFamily: '"Andale Mono", monospace',
+    color:'white',
     backgroundColor:'blue',
 };
 
@@ -34,6 +38,7 @@ class App extends PureComponent {
         this.handleChange = this.handleChange.bind(this);
 
         this.state = {
+            infoText: 'Hi, Welcome to use electron draw sequence diagram!',
             inputTxt: 'a->b:c',
             height: window.innerHeight-22,
             width:300,
@@ -66,13 +71,17 @@ class App extends PureComponent {
         let buffer = canvasBuffer(canvas, 'image/png');
         let imageName = path.join(downloadsFolder(), '/image.png');
         
-        fs.writeFile(imageName, buffer, function() {
+        fs.writeFile(imageName, buffer, () => {
             console.log(imageName);
-            /*$timeout(() => {
-                //$scope.imgLocation = `${$filter('date')(new Date(),'yyyy-MM-dd HH:mm:ss')}:\n${imageName}`;
-            }, 0);*/
 
+            this.setState({
+                infoText: `Download file: ${imageName} successful.`
+            });
+            
         });
+        /*this.setState({
+            infoText: `Download file: ${imageName} successful.`
+        });*/
     }
 
     handleChange(evt) {
@@ -90,16 +99,17 @@ class App extends PureComponent {
             <div className="container">
                 <div 
                     className="tool-bar"
-                    style={{height:`${this.state.height}px`}}
-                />
+                    style={{height:`${this.state.height}px`}}>
+                    <Button 
+                        alt={this.downloadImage} />
+                </div>
                 <div 
                     className="item-text"
                     style={{height:`${this.state.height}px`, width:`${this.state.width}px`}}>
                     <TextArea 
                         value = {this.state.inputTxt}
                         onChange={this.handleChange}/>
-                    <Button 
-                        alt={this.downloadImage} />
+                    
                 </div>
                 <div 
                     className="item-svg"
@@ -112,7 +122,7 @@ class App extends PureComponent {
                         id="canvas" 
                         style={{visibility: 'hidden'}}/>
                 </div>
-                <div style={infoBar}/>
+                <div style={infoBar} >{this.state.infoText}</div>
             </div>
         )
     }

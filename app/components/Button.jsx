@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 const btnStyles = {
-    lineHeight:'100%',
-    fontSize:'5vmin'
+    //lineHeight:'100%',
+    fontSize:'30px'
 }
 
 class Button extends PureComponent {
