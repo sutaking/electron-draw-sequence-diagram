@@ -16,7 +16,7 @@ class Button extends PureComponent {
         this.state = {
             color: '#E3F2FD'
         };
-        this.positions = [20, 70, 120];
+        this.positions = [20, 70, 120,170];
     }
 
     handleFocus() {
@@ -38,7 +38,7 @@ class Button extends PureComponent {
         if(this.props.id === 5) {
             btnStyle.bottom = '15px';
         } else {
-            btnStyle.top = `${this.positions[this.props.id]}px`;
+            btnStyle.top = `${60*this.props.id+20}px`;
         }
         
         return (

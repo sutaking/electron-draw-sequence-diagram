@@ -102,26 +102,29 @@ class App extends PureComponent {
     }
 
     render() {
-        
+        let btns = [];
+        btns.push({
+            click:this.downloadImage,
+            icon:'fa-download'
+        });
+        btns.push({icon:'fa-file-code-o'});
+        btns.push({
+            click:this.changeTheme,
+            icon:'fa-magic'
+        });
+        btns.push({icon:'fa-plus-circle'});
+        btns.push({icon:'fa-minus-circle'});
+
+        btns.push({icon:'fa-github'});
+
         return (
             <div className="container">
                 <div 
                     className="tool-bar"
                     style={{height:`${this.state.height}px`}}>
-                    <Button 
-                        id={0}
-                        click={this.downloadImage}
-                        icon={'fa-download'} />
-                    <Button 
-                        id={1}
-                        icon={'fa-file-code-o'} />
-                    <Button 
-                        id={2}
-                        click={this.changeTheme}
-                        icon={'fa-magic'} />
-                    <Button 
-                        id={5}
-                        icon={'fa-github'} />    
+                    {btns.map((obj,i)=> {
+                        return <Button  id={i} key={i} click={obj.click} icon={obj.icon} />
+                    })}
                 </div>
                 <div 
                     className="item-text"
