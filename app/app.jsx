@@ -21,22 +21,23 @@ const infoBar ={
     fontSize: '13px',
     fontFamily: '"Andale Mono", monospace',
     color:'white',
-    backgroundColor:'blue',
+    backgroundColor:'#2196F3',
 };
 
 class App extends PureComponent {
     constructor(props) {
         super(props);
-
-        this.options = {
-            theme: 'simple'
-        };
         
         this.svgDom = '';
         this.downloadImage = this.downloadImage.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.changeTheme = this.changeTheme.bind(this);
+        this.theme = false;
 
         this.state = {
+            options : {
+                theme: 'simple'
+            },
             infoText: 'Hi, Welcome to use electron draw sequence diagram!',
             inputTxt: 'a->b:c',
             height: window.innerHeight-22,
@@ -88,6 +89,18 @@ class App extends PureComponent {
         console.log(this.state.inputTxt);
     }
 
+    changeTheme() {
+        console.log('-- changeTheme --');
+
+        this.setState({
+            options : {
+                theme: this.theme ? 'simple':'hand'
+            },
+            infoText: `Change Theme: ${this.theme ? 'Simple':'Hand'}`
+        });
+        this.theme =!this.theme;
+    }
+
     render() {
         
         return (
@@ -96,7 +109,19 @@ class App extends PureComponent {
                     className="tool-bar"
                     style={{height:`${this.state.height}px`}}>
                     <Button 
-                        alt={this.downloadImage} />
+                        id={0}
+                        click={this.downloadImage}
+                        icon={'fa-download'} />
+                    <Button 
+                        id={1}
+                        icon={'fa-file-code-o'} />
+                    <Button 
+                        id={2}
+                        click={this.changeTheme}
+                        icon={'fa-magic'} />
+                    <Button 
+                        id={5}
+                        icon={'fa-github'} />    
                 </div>
                 <div 
                     className="item-text"
@@ -112,7 +137,7 @@ class App extends PureComponent {
                     <SvgArea 
                         ref={(data) => {this.svgDom = data;}}
                         text={this.state.inputTxt}
-                        opts={this.options}/>
+                        opts={this.state.options}/>
                     <canvas 
                         id="canvas" 
                         style={{visibility: 'hidden'}}/>

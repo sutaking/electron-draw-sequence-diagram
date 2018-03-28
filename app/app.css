@@ -46,7 +46,7 @@ body.vscode-dark svg .actor text {
 }
 
 .tool-bar {
-    background-color: gray;
+    background-color: #90CAF9;
     position: absolute;
     left: 0px;
     width: 54px;
@@ -58,11 +58,11 @@ body.vscode-dark svg .actor text {
     flex-direction: column;*/
     position: absolute;
     left: 54px;
-    background-color: #333;
+    background-color: #42A5F5;
 }
 
-.item-left .text {
-    color: gray;
+.item-text .text {
+    color: #0D47A1;
     margin-left: 5%;
     font-size: 2vh;
     resize: both;
@@ -82,15 +82,8 @@ body.vscode-dark svg .actor text {
 
 .btn-save {
     position: absolute;
-    bottom: 15px;
-    left: 12px;
+    left: 15px;
     cursor: pointer;
-    /*font-family: "Andale Mono", monospace;
-    margin-left: 5%;
-    margin-top: 30px;
-    width: 30%;
-    height: 5%;
-    box-shadow: 1% 1%;*/
 }
 
 .item-svg {

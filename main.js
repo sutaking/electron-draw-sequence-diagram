@@ -16,6 +16,7 @@ function createWindow() {
         /*webPreferences: {
             nodeIntegration: false
         }*/
+        //titleBarStyle: 'hidden',
         title: 'Make Your Seqeunce Diagram'
     });
 

@@ -14,8 +14,9 @@ class Button extends PureComponent {
         this.handleBlur = this.handleBlur.bind(this);
 
         this.state = {
-            color: 'red'
-        }
+            color: '#E3F2FD'
+        };
+        this.positions = [20, 70, 120];
     }
 
     handleFocus() {
@@ -26,18 +27,27 @@ class Button extends PureComponent {
 
     handleBlur() {
         this.setState({
-            color: 'red'
+            color: '#E3F2FD' 
         });
     }
 
     render() {
+        let btnStyle = {
+            color:this.state.color
+        };
+        if(this.props.id === 5) {
+            btnStyle.bottom = '15px';
+        } else {
+            btnStyle.top = `${this.positions[this.props.id]}px`;
+        }
+        
         return (
             <div className="btn-save" 
-                style={{color:this.state.color}}
-                onClick={this.props.alt} 
+                style={btnStyle}
+                onClick={this.props.click} 
                 onMouseEnter={this.handleFocus}
                 onMouseLeave={this.handleBlur}>
-                    <i className="fa fa-download" style={btnStyles}></i>
+                    <i className={`fa ${this.props.icon}`} style={btnStyles}></i>
             </div>
         )
     }
