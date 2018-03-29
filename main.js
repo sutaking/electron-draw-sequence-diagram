@@ -1,10 +1,10 @@
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
-
+const isDev = require('electron-is-dev');
 const app = electron.app;
 
-const BrowserWindow = electron.BrowserWindow;
+const { BrowserWindow } = require('electron');
 
 
 let mainWindow
@@ -25,7 +25,7 @@ function createWindow() {
         protocol: 'file:',
         slashes: true
     }));
-    //mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
 
     mainWindow.on('closed', function() {
 
@@ -50,3 +50,4 @@ app.on('activate', function() {
         createWindow();
     }
 })
+

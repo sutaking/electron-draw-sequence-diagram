@@ -11,7 +11,7 @@ import downloadsFolder from 'downloads-folder';
 import canvasBuffer from 'electron-canvas-to-buffer';
 import path from 'path';
 import fs from 'fs';
-import { shell } from 'electron';
+import { shell, clipboard } from 'electron';
 
 const widthInputArea = 350;
 const heightInfoBar = 22;
@@ -64,6 +64,11 @@ class App extends PureComponent {
 
     componentDidMount() {        
         window.addEventListener('resize', this.updateLayout.bind(this));
+        window.addEventListener('copy', function (e){
+            console.log('----------------')
+            console.log(e.text);
+            
+        });
     }
 
     componentWillUnmount() {
@@ -89,12 +94,12 @@ class App extends PureComponent {
     }
 
     handleChange(evt) {
-        console.log('-- handleChange --');
+        //console.log('-- handleChange --');
         
         this.setState({
             inputTxt: evt.target.value
         });
-        console.log(this.state.inputTxt);
+        //console.log(this.state.inputTxt);
     }
 
     changeTheme() {
