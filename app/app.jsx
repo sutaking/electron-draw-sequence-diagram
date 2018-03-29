@@ -11,11 +11,14 @@ import downloadsFolder from 'downloads-folder';
 import canvasBuffer from 'electron-canvas-to-buffer';
 import path from 'path';
 import fs from 'fs';
+import { shell } from 'electron';
 
 const widthInputArea = 350;
 const heightInfoBar = 22;
+const repository = 'https://github.com/sutaking/electron-draw-sequence-diagram';
+const guide = 'https://bramp.github.io/js-sequence-diagrams/';
 
-const infoBar ={
+const infoBar = {
     position:'absolute',
     bottom: '0px',
     height : `${heightInfoBar}px`,
@@ -35,6 +38,7 @@ class App extends PureComponent {
         this.downloadImage = this.downloadImage.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.changeTheme = this.changeTheme.bind(this);
+        this.handleOpenUrl = this.handleOpenUrl.bind(this);
         this.theme = false;
 
         this.state = {
@@ -43,11 +47,12 @@ class App extends PureComponent {
             },
             infoText: 'Hi, Welcome to use electron draw sequence diagram!',
             inputTxt: 'a->b:c',
-            height: window.innerHeight-heightInfoBar,
+            height: window.innerHeight - heightInfoBar,
             width: widthInputArea,
-            svgL: widthInputArea+54
+            svgL: widthInputArea + 54
         };
     }
+
     updateLayout() {
         let w = window.innerWidth;
         let h = window.innerHeight;
@@ -55,12 +60,12 @@ class App extends PureComponent {
         this.setState({
             height: window.innerHeight-heightInfoBar            
         });
-
     }
 
     componentDidMount() {        
         window.addEventListener('resize', this.updateLayout.bind(this));
     }
+
     componentWillUnmount() {
         window.removeEventListener('resize', this.updateLayout.bind(this));
     }
@@ -104,7 +109,15 @@ class App extends PureComponent {
         this.theme =!this.theme;
     }
 
+    handleOpenUrl(evt) {
+        console.log('-- handleOpenUrl --');
+        console.log(evt)
+        //window.open(url);
+    }
+    
+
     render() {
+        
         let btns = [];
         btns.push({
             click:this.downloadImage,
@@ -116,9 +129,16 @@ class App extends PureComponent {
         });
         btns.push({icon:'fa-plus-circle'});
         btns.push({icon:'fa-minus-circle'});
-        btns.push({icon:'fa-question'});
 
-        btns.push({icon:'fa-github'});
+        btns.push({
+            icon:'fa-question',
+            click:() => {return window.open(guide)}
+        });
+
+        btns.push({
+            click:() => {return shell.openExternal(repository)},
+            icon:'fa-github'
+        });
 
         return (
             <div className="container">
@@ -135,7 +155,6 @@ class App extends PureComponent {
                     <TextArea 
                         value = {this.state.inputTxt}
                         onChange={this.handleChange}/>
-                    
                 </div>
                 <div 
                     className="item-svg"

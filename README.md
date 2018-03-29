@@ -7,8 +7,6 @@ Toto-List
 
 
 -   build app to dmg & exe
--   js-sequence help doc
--   update ui style to material design
 -   update style to head of app
 -   add localstorage to save data.
 -   resize textarea and svg-area
@@ -22,3 +20,5 @@ Finish-List
 -   ~~add tool bar~~
 -   ~~add status bar~~
 -   ~~fix scrollbar show~~
+-   ~~js-sequence help doc~~
+-   ~~update ui style to material design~~

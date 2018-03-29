@@ -1,6 +1,6 @@
 {
     "name": "electron-draw-sequence-diagram",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "Draw UML sequence diagrams on desktop by Electron",
     "main": "main.js",
     "scripts": {

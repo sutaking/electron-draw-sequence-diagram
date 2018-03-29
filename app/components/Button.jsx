@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 const btnStyles = {
     fontSize:'28px',
-    textShadow: '0px 1px 1px rgba(0, 0, 0, .7)'
-}
+    textShadow: '1px 1px 1px rgba(0, 0, 0, .75)'
+};
 
 class Button extends PureComponent {
     constructor(props) {
@@ -28,9 +28,10 @@ class Button extends PureComponent {
 
     handleBlur() {
         this.setState({
-            color: '#BBDEFB' 
+            color: '#BBDEFB'
         });
     }
+
 
     render() {
         let btnStyle = {
