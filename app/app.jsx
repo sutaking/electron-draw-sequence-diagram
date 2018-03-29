@@ -12,14 +12,17 @@ import canvasBuffer from 'electron-canvas-to-buffer';
 import path from 'path';
 import fs from 'fs';
 
+const widthInputArea = 350;
+const heightInfoBar = 22;
+
 const infoBar ={
     position:'absolute',
     bottom: '0px',
-    height : '22px',
+    height : `${heightInfoBar}px`,
     width: '100%',
-    lineHeight:'22px',
-    fontSize: '13px',
-    fontFamily: '"Andale Mono", monospace',
+    lineHeight:`${heightInfoBar}px`,
+    fontSize: '14px',
+    //fontFamily: '"Andale Mono", monospace',
     color:'white',
     backgroundColor:'#2196F3',
 };
@@ -40,9 +43,9 @@ class App extends PureComponent {
             },
             infoText: 'Hi, Welcome to use electron draw sequence diagram!',
             inputTxt: 'a->b:c',
-            height: window.innerHeight-22,
-            width:300,
-            svgL:300+54
+            height: window.innerHeight-heightInfoBar,
+            width: widthInputArea,
+            svgL: widthInputArea+54
         };
     }
     updateLayout() {
@@ -50,7 +53,7 @@ class App extends PureComponent {
         let h = window.innerHeight;
         console.log(`w:${w}, h:${h}`);
         this.setState({
-            height: window.innerHeight-22            
+            height: window.innerHeight-heightInfoBar            
         });
 
     }
@@ -106,14 +109,14 @@ class App extends PureComponent {
         btns.push({
             click:this.downloadImage,
             icon:'fa-download'
-        });
-        btns.push({icon:'fa-file-code-o'});
+        });        
         btns.push({
             click:this.changeTheme,
             icon:'fa-magic'
         });
         btns.push({icon:'fa-plus-circle'});
         btns.push({icon:'fa-minus-circle'});
+        btns.push({icon:'fa-question'});
 
         btns.push({icon:'fa-github'});
 
@@ -136,7 +139,10 @@ class App extends PureComponent {
                 </div>
                 <div 
                     className="item-svg"
-                    style={{left:`${this.state.svgL}px`}}>
+                    style={{
+                        left:`${this.state.svgL}px`, 
+                        height:`${this.state.height}px`,
+                        width:`${window.innerWidth-this.state.width-54}px`}}>
                     <SvgArea 
                         ref={(data) => {this.svgDom = data;}}
                         text={this.state.inputTxt}

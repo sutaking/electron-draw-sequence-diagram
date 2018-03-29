@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 const btnStyles = {
-    fontSize:'28px'
+    fontSize:'28px',
+    textShadow: '0px 1px 1px rgba(0, 0, 0, .7)'
 }
 
 class Button extends PureComponent {
@@ -14,7 +15,7 @@ class Button extends PureComponent {
         this.handleBlur = this.handleBlur.bind(this);
 
         this.state = {
-            color: '#E3F2FD'
+            color: '#BBDEFB'
         };
         this.positions = [20, 70, 120,170];
     }
@@ -27,7 +28,7 @@ class Button extends PureComponent {
 
     handleBlur() {
         this.setState({
-            color: '#E3F2FD' 
+            color: '#BBDEFB' 
         });
     }
 

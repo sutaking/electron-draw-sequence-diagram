@@ -51,6 +51,8 @@ body.vscode-dark svg .actor text {
     left: 0px;
     width: 54px;
     height: 500px;
+    box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, .75);
+    z-index: 2;
 }
 
 .item-text {
@@ -59,6 +61,8 @@ body.vscode-dark svg .actor text {
     position: absolute;
     left: 54px;
     background-color: #42A5F5;
+    box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, .75);
+    z-index: 1;
 }
 
 .item-text .text {
@@ -70,7 +74,7 @@ body.vscode-dark svg .actor text {
 
 .input-text {
     width: 90%;
-    height: 75%;
+    height: 90%;
     font-family: "Andale Mono", monospace;
     font-size: 14px;
     margin-left: 5%;
@@ -84,9 +88,11 @@ body.vscode-dark svg .actor text {
     position: absolute;
     left: 15px;
     cursor: pointer;
+    text-shadow: 0px 5px 5px 0px rgba(0, 0, 0, .75);
 }
 
 .item-svg {
     position: absolute;
     top: 0px;
+    overflow: auto;
 }

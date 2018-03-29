@@ -9,7 +9,6 @@ Toto-List
 -   build app to dmg & exe
 -   js-sequence help doc
 -   update ui style to material design
--   fix scrollbar show
 -   update style to head of app
 -   add localstorage to save data.
 -   resize textarea and svg-area
@@ -22,3 +21,4 @@ Finish-List
 -   ~~download png file from electron~~
 -   ~~add tool bar~~
 -   ~~add status bar~~
+-   ~~fix scrollbar show~~
