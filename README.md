@@ -1,18 +1,17 @@
 # electron-draw-sequence-diagram
 Draw UML sequence diagrams on Desktop by Electron
 
+![img](./doc/assets/main.png)
 
-
-Toto-List
-
-
+## Toto-List:
 -   build app to dmg & exe
 -   update style to head of app
 -   add localstorage to save data.
 -   resize textarea and svg-area
 
-Finish-List
 
+-------
+Finish-List:
 -   ~~save svg to png~~
 -   ~~get input text~~
 -   ~~layout ui with absolute~~
