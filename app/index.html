@@ -47,7 +47,7 @@
 
     <script>
         {
-            const isDev = require('electron-is-dev');
+            const isDev = false; //require('electron-is-dev');
             const lists = [];
             if (isDev) {
                 lists.push(
@@ -56,8 +56,8 @@
                 );
             } else {
                 lists.push(
-                    'vendor.prod.js',
-                    'app.prod.js'
+                    '../output/vendor.prod.js',
+                    '../output/app.prod.js'
                 )
             }
             document.write(

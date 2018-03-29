@@ -4,8 +4,7 @@ Draw UML sequence diagrams on Desktop by Electron
 ![img](./doc/assets/main.png)
 
 ## Toto-List:
--   build app to dmg & exe
--   update style to head of app
+-   finish zoom in & zoom out.
 -   add localstorage to save data.
 -   resize textarea and svg-area
 
@@ -21,3 +20,4 @@ Finish-List:
 -   ~~fix scrollbar show~~
 -   ~~js-sequence help doc~~
 -   ~~update ui style to material design~~
+-   ~~ubuild app to dmg & exe~~u

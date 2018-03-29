@@ -5,7 +5,7 @@ const nodeExternals = require('webpack-node-externals');
 const merge = require('webpack-merge');
 
 const PATHS = {
-    prod: path.resolve(__dirname, 'app'),
+    prod: path.resolve(__dirname, 'output'),
 }
 
 // PRODUCTION CONFIGS
