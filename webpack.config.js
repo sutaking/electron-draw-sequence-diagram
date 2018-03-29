@@ -82,13 +82,13 @@ const commonConfig = merge([
     // Separate source map from bundles
     plugins.generateSourceMaps({ type: 'none' }),
     // Extract Bundle & Code Spliting
-    plugins.extractBundles([{
+    /*plugins.extractBundles([{
         name: 'vendor',
         minChunks: ({ resource }) =>
             resource &&
             resource.indexOf('node_modules') >= 0 &&
             resource.match(/\.js$/),
-    }, ]),
+    }, ]),*/
 
     {
         target: 'electron-renderer',

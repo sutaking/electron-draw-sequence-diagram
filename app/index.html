@@ -3,12 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-    <!--script>
-        window.nodeRequire = window.require;
-        delete window.require;
-        delete window.exports;
-        delete window.module;
-    </script-->
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
     <!--link rel="stylesheet" href="./vendor/css/sequence-diagram.css"-->
@@ -16,47 +10,18 @@
 
 <body>
     <div id="root"></div>
-    <!-- Layout     -->
-    <!--div id="root" class="container">
-        <div class="item-left">
-            <textarea id="input1" ng-change="update()" ng-model="textVal" class="input-text" cols="10" rows="5"></textarea>
-            <button class="btn-save" ng-click="saveDraw()">
-                    <i class="fa fa-download " style="line-height: 100%;font-size:5vmin;"></i>
-            </button>
-            <div class="text">
-                <p ng-bind="imgLocation"></p>
-            </div>
-        </div>
-        <div class="item-right">
-            <div id="diagram"></div>
-            <canvas ng-hide=true id="canvas" width="1" height="1"></canvas>
-        </div>
-    </div-->
-
-
-    <!--    Lib Code    -->
-    <!--script src="../node_modules/snapsvg/dist/snap.svg-min.js"></script>
-    <script src="../node_modules/canvg/canvg.js"></script>
-    <script src="../node_modules/angular/angular.min.js"></script>
-
-    <script src="./vendor/underscore-min.js"></script>
-    <script src="./vendor/webfont.js"></script>
-    <script src="./vendor/sequence-diagram-snap.js"></script-->
-
-    <!-- Webpack bundle -->
-
     <script>
         {
             const isDev = false; //require('electron-is-dev');
             const lists = [];
             if (isDev) {
                 lists.push(
-                    'http://localhost:3000/vendor.dev.js',
+                    //'http://localhost:3000/vendor.dev.js',
                     'http://localhost:3000/app.dev.js'
                 );
             } else {
                 lists.push(
-                    '../output/vendor.prod.js',
+                    //'../output/vendor.prod.js',
                     '../output/app.prod.js'
                 )
             }

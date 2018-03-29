@@ -1,6 +1,6 @@
 {
     "name": "electron-draw-sequence-diagram",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "description": "Draw UML sequence diagrams on desktop by Electron",
     "main": "main.js",
     "scripts": {
@@ -39,6 +39,8 @@
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-0": "^6.24.1",
         "babel-register": "^6.26.0",
+        "clean-webpack-plugin": "^0.1.19",
+        "compression-webpack-plugin": "^1.1.11",
         "duplicate-package-checker-webpack-plugin": "^2.1.0",
         "electron": "^1.8.4",
         "electron-builder": "^20.5.1",
@@ -46,17 +48,16 @@
         "eslint-plugin-react": "^7.7.0",
         "react-hot-loader": "^4.0.0",
         "react-test-renderer": "^16.2.0",
-        "webpack": "^3.10.0",
+        "webpack": "^4.1.1",
         "webpack-bundle-analyzer": "^2.11.1",
+        "webpack-cli": "^2.0.11",
         "webpack-dashboard": "^1.1.1",
-        "webpack-dev-server": "^2.11.1",
+        "webpack-dev-server": "^3.1.1",
         "webpack-merge": "^4.1.0",
         "webpack-node-externals": "^1.6.0"
     },
     "dependencies": {
         "canvg": "^1.0.0",
-        "clean-webpack-plugin": "^0.1.19",
-        "compression-webpack-plugin": "^1.1.11",
         "downloads-folder": "^1.0.1",
         "electron-canvas-to-buffer": "^2.0.0",
         "electron-is-dev": "^0.3.0",
