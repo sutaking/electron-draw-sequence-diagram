@@ -3,6 +3,12 @@ Draw UML sequence diagrams on Desktop by Electron
 
 ![img](./doc/assets/main.png)
 
+## Download url
+
+-   Windows :  [electron-draw-sequence-diagram.Setup.0.1.0.zip](https://github.com/sutaking/electron-draw-sequence-diagram/releases/download/v0.1.0/electron-draw-sequence-diagram.Setup.0.1.0.zip)
+-   MacOS : [electron-draw-sequence-diagram-0.1.0.dmg](https://github.com/sutaking/electron-draw-sequence-diagram/releases/download/v0.1.0/electron-draw-sequence-diagram-0.1.0.dmg)
+
+
 ## Toto-List:
 -   finish zoom in & zoom out.
 -   add localstorage to save data.
@@ -21,3 +27,8 @@ Finish-List:
 -   ~~js-sequence help doc~~
 -   ~~update ui style to material design~~
 -   ~~ubuild app to dmg & exe~~u
+
+
+## About
+-   [react-sequence-diagram](https://github.com/zfanta/react-sequence-diagram)
+-   [canvg](https://github.com/canvg/canvg)
