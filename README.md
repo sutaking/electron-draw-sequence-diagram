@@ -29,6 +29,15 @@ Finish-List:
 -   ~~ubuild app to dmg & exe~~u
 
 
+## Quick-Start
+
+````
+yarn install
+yarn dev &
+yarn start
+````
+
+
 ## About
 -   [react-sequence-diagram](https://github.com/zfanta/react-sequence-diagram)
 -   [canvg](https://github.com/canvg/canvg)
